@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Alexandre Rousseau']
   spec.email         = ['contact@rousseau-alexandre.fr']
 
-  spec.summary       = 'Visualize commit over time'
+  spec.summary       = 'Visualize commit over time into a beautifull graphic'
   # spec.description   = 'TODO: Write a longer description or delete this line.'
   spec.homepage      = 'https://github.com/madeindjs/activigit'
 

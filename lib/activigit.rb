@@ -43,11 +43,34 @@ module Activigit
       end
 
       g = Gruff::Line.new
-      g.title = 'Wow!  Look at this!'
+      g.title = name(format)
       # transform `['a', 'b', 'c']` into `{0=>'a', 1=>'b', 2=>'c'}`
       g.labels = counts.map.with_index { |k, i| [i, k.first] }.to_h
       g.data :commits, counts.values
-      g.write('exciting.png')
+      g.write filename(format)
+    end
+
+    private
+
+    def name(format)
+      repository_name = File.basename @path
+      format('%s %s', repository_name, format_name(format))
+    end
+
+    def filename(format)
+      name(format).gsub(/[^0-9A-Z]/i, '_') + '.png'
+    end
+
+    def format_name(format)
+      case format
+      when '%y'
+        'yearly'
+      when '%y-%m'
+        'monthly'
+      when '%y-%m-%d'
+        'daily'
+
+      end
     end
   end
 end
