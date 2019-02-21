@@ -5,10 +5,10 @@ require 'date'
 module Activigit
   class Error < StandardError; end
 
-  def self.run
+  def self.run(folder)
     logs = ''
 
-    Dir.chdir('/home/apprenant/arousseau/website/') do
+    Dir.chdir(folder) do
       logs = `git log --branches --format=%cI`.split("\n")
     end
 

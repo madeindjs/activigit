@@ -6,29 +6,16 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Install some stuff
-
 ~~~bash
 $ sudo apt-get install libmagickwand-dev imagemagick
+$ gem install activigit
 ~~~
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'activigit'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install activigit
 
 ## Usage
 
-TODO: Write usage instructions here
+~~~bash
+$ activigit.rb /home/lorendre/gitea/isignif/website/
+~~~
 
 ## Development
 

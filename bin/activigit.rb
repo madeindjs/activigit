@@ -1,4 +1,11 @@
 #!/usr/bin/ruby
 require 'activigit'
 
-Activigit.run
+folder = ARGV.first
+
+if folder.nil? || folder.empty?
+  warn 'Please provide a Git repository'
+  exit 1
+end
+
+Activigit.run folder
