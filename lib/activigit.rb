@@ -1,10 +1,20 @@
 require 'activigit/version'
 require 'gruff'
+require 'git'
 
 module Activigit
   class Error < StandardError; end
 
   def self.run
+    repository = Git.open('/home/apprenant/arousseau/website/')
+
+    repository.branches.each do |branch|
+      puts branch
+      puts repository.log.object(branch).count
+    end
+
+    return
+
     g = Gruff::Line.new
     g.title = 'Wow!  Look at this!'
     g.labels = { 0 => '5/6', 1 => '5/15', 2 => '5/24', 3 => '5/30', 4 => '6/4',
