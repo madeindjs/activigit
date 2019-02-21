@@ -5,7 +5,7 @@ require 'date'
 module Activigit
   class Error < StandardError; end
 
-  def self.run(folder)
+  def self.by_days(folder)
     logs = ''
 
     Dir.chdir(folder) do
@@ -35,7 +35,7 @@ module Activigit
 
     end
 
-    puts counts
+    # puts counts
 
     # date_range = (first_commit_date..last_commit_date)
     # days = date_range.uniq { |d| d }
@@ -43,18 +43,13 @@ module Activigit
     # puts date_range.to_a.inspect
     # puts last_commit_date
 
-    return
+    # return
 
     g = Gruff::Line.new
     g.title = 'Wow!  Look at this!'
-    g.labels = { 0 => '5/6', 1 => '5/15', 2 => '5/24', 3 => '5/30', 4 => '6/4',
-                 5 => '6/12', 6 => '6/21', 7 => '6/28' }
-    g.data :Jimmy, [25, 36, 86, 39, 25, 31, 79, 88]
-    g.data :Charles, [80, 54, 67, 54, 68, 70, 90, 95]
-    g.data :Julie, [22, 29, 35, 38, 36, 40, 46, 57]
-    g.data :Jane, [95, 95, 95, 90, 85, 80, 88, 100]
-    g.data :Philip, [90, 34, 23, 12, 78, 89, 98, 88]
-    g.data :Arthur, [5, 10, 13, 11, 6, 16, 22, 32]
+    # transform `['a', 'b', 'c']` into `{0=>'a', 1=>'b', 2=>'c'}`
+    g.labels = counts.map.with_index { |k, i| [i, k] }.to_h
+    g.data :commits, counts.values
     g.write('exciting.png')
   end
 end
