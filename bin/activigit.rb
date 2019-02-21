@@ -8,4 +8,4 @@ if folder.nil? || folder.empty?
   exit 1
 end
 
-Activigit.by_days folder
+Activigit.by_months folder
