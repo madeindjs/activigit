@@ -1,5 +1,7 @@
 # Activigit
 
+[![Gem Version](https://badge.fury.io/rb/activigit)](https://badge.fury.io/rb/activigit)
+
 Visualize commit over time into a beautifull graphic.
 
 ![Example of output using Monthly option](example.png)
