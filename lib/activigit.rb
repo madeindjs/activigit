@@ -18,8 +18,6 @@ module Activigit
       group_with_format '%Y-%m'
     end
 
-    private
-
     def group_with_format(format)
       logs = ''
       Dir.chdir(@path) do

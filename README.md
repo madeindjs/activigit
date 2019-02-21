@@ -13,8 +13,19 @@ $ gem install activigit
 
 ## Usage
 
+~~~
+Draw an activity graph for the given Git golder
+
+Usage: activigit.rb [options] <git_folder_path>
+    -b, --group_by=FIELD             Counts commit by months or days
+                                     possibles values are `months` or `days`
+    -f, --group_by_format=FORMAT     Counts commit by given date format
+    -h, --help                       Display this message
+~~~
+
+
 ~~~bash
-$ activigit.rb /home/lorendre/gitea/isignif/website/
+$ activigit.rb ~/gitea/isignif/website/
 ~~~
 
 ## Development
@@ -25,4 +36,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/activigit.
+Bug reports and pull requests are welcome on GitHub at https://github.com/madeindjs/activigit.
