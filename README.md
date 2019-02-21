@@ -6,8 +6,10 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
+Install some stuff
+
 ~~~bash
-No package 'MagickCore' found
+$ sudo apt-get install libmagickwand-dev imagemagick
 ~~~
 
 Add this line to your application's Gemfile:
